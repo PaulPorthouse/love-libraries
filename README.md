@@ -1,4 +1,4 @@
-# LUA LIBRARIES
+# Lua Libraries
 
 These files are a set of custom libraries for [Lua](https://www.lua.org/about.html), specifically written for use with the [LÖVE framework](https://love2d.org/).
 

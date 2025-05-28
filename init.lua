@@ -1,8 +1,8 @@
-local LuaLibraries = { }
-LuaLibraries.__index = LuaLibraries
-LuaLibraries.__version = "0.0.1"
+local LoveLibraries = { }
+LoveLibraries.__index = LoveLibraries
+LoveLibraries.__version = "0.0.1"
 
-function LuaLibraries:new(basePath)
+function LoveLibraries:new(basePath)
     if basePath:sub(-1) ~= "/" then basePath = basePath .. "/" end
     local ll = {
         basePath = basePath or "",
@@ -13,23 +13,23 @@ function LuaLibraries:new(basePath)
     return ll
 end
 
-function LuaLibraries:listLibraries()
+function LoveLibraries:listLibraries()
     return love.filesystem.getDirectoryItems(self.libraryPath)
 end
 
-function LuaLibraries:listExtensions()
+function LoveLibraries:listExtensions()
     return love.filesystem.getDirectoryItems(self.extensionPath)
 end
 
-function LuaLibraries:loadLibrary(libraryName)
+function LoveLibraries:loadLibrary(libraryName)
     return require (self.libraryPath .. libraryName)
 end
 
-function LuaLibraries:loadExtension(extensionName)
+function LoveLibraries:loadExtension(extensionName)
     require (self.extensionPath .. extensionName)
 end
 
-function LuaLibraries:loadLibraries(libraryNames)
+function LoveLibraries:loadLibraries(libraryNames)
     local objs = {}
     for _, name in ipairs(libraryNames) do
         objs[name] = self:loadLibrary(name)
@@ -37,13 +37,13 @@ function LuaLibraries:loadLibraries(libraryNames)
     return objs
 end
 
-function LuaLibraries:loadExtensions(extensionNames)
+function LoveLibraries:loadExtensions(extensionNames)
     for _, name in ipairs(extensionNames) do
         self:loadExtension(name)
     end
 end
 
-function LuaLibraries:loadAllLibraries()
+function LoveLibraries:loadAllLibraries()
     local allLibs = self:listLibraries()
     local libs = {}
     for _, l in ipairs(allLibs) do
@@ -53,11 +53,11 @@ function LuaLibraries:loadAllLibraries()
     return libs
 end
 
-function LuaLibraries:loadAllExtensions()
+function LoveLibraries:loadAllExtensions()
     local allExtensions = self:listExtensions()
     for _, e in ipairs(allExtensions) do
         self:loadExtension(e)
     end
 end
 
-return LuaLibraries:new(...)
+return LoveLibraries:new(...)

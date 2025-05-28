@@ -5,7 +5,7 @@ function love.load()
     require("lldebugger").start()
     end
 
-    LuaLibraries = require "."
+    LoveLibraries = require "."
 
     -- extension tests
     local MathTests = require "extensions/MathExtension/tests"

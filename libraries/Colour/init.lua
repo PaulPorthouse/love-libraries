@@ -2,7 +2,7 @@ local Colour = {}
 Colour.__index = Colour
 Colour.__version = "0.0.1"
 
-LuaLibraries:loadExtension("MathExtension")
+LoveLibraries:loadExtension("MathExtension")
 
 function Colour:new(r, g, b, a)
     local c = {

@@ -2,7 +2,7 @@ local Circle = {}
 Circle.__index = Circle
 Circle.__verison = "0.0.1"
 
-local Point = LuaLibraries:loadLibrary("point")
+local Point = LoveLibraries:loadLibrary("point")
 
 function Circle:new(p1, p2, p3)
     local c = {}

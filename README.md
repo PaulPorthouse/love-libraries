@@ -1,6 +1,10 @@
-# Lua Libraries
+# LÖVE Libraries
 
-These files are a set of custom libraries for [Lua](https://www.lua.org/about.html), specifically written for use with the [LÖVE framework](https://love2d.org/).
+These files are a set of custom libraries in [Lua](https://www.lua.org/about.html), specifically written for use with the [LÖVE framework](https://love2d.org/).
+
+# Warning
+
+This library is in very early development and will potentially have breaking changes. Use at your own risk.
 
 # Tests
 
@@ -32,13 +36,13 @@ myCircle = Circle:new(100, 100, 75)
 ## Creating the library
 
 ```
-LuaLibraries = require "libraries/lua-libraries"
+LoveLibraries = require "libraries/lua-libraries"
 ```
 
 ## Listing extensions
 
 ```
-local extensions = LuaLibraries:listExtensions()
+local extensions = LoveLibraries:listExtensions()
 print(table.concat(extensions, ", "))
 ```
 which outputs
@@ -49,7 +53,7 @@ MathExtension, StringExtension
 ## Listing libraries
 
 ```
-local libraries = LuaLibraries:listLibraries()
+local libraries = LoveLibraries:listLibraries()
 print(table.concat(libraries, ", "))
 ```
 which outputs
@@ -60,31 +64,31 @@ Circle, Colour, Line, Path, Point, Rectangle, Vector2, Vector3, Vector4
 ## Importing a single extension
 
 ```
-LuaLibraries:loadExtension("MathExtension")
+LoveLibraries:loadExtension("MathExtension")
 ```
 
 ## Importing multiple extensions
 
 ```
-LuaLibraries:loadExtensions({ "MathExtension", "StringExtension" })
+LoveLibraries:loadExtensions({ "MathExtension", "StringExtension" })
 ```
 
 ## Importing all extensions
 
 ```
-LuaLibraries:loadAllExtensions()
+LoveLibraries:loadAllExtensions()
 ```
 
 ## Importing a single library
 
 ```
-Circle = LuaLibraries:loadLibrary("Circle")
+Circle = LoveLibraries:loadLibrary("Circle")
 ```
 
 ## Importing multiple libraries
 
 ```
-local libraries = LuaLibraries:loadLibraries({ "Circle", "Rectangle" })
+local libraries = LoveLibraries:loadLibraries({ "Circle", "Rectangle" })
 local myCircle = libraries["Circle"]:new(123, 456, 75)
 print(myCircle.x, myCircle.y, myCircle.radius)
 ```
@@ -96,7 +100,7 @@ which outputs
 ## Importing all libraries
 
 ```
-local libraries = LuaLibraries:loadAllLibraries()
+local libraries = LoveLibraries:loadAllLibraries()
 for name, library in pairs(libraries) do
     print(name)
 end

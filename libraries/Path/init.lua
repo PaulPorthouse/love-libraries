@@ -2,7 +2,7 @@ local Path = {}
 Path.__index = Path
 Path.__version = "0.0.1"
 
-LuaLibraries:loadExtension("StringExtension")
+LoveLibraries:loadExtension("StringExtension")
 
 Path.PathSeparator = "/"
 

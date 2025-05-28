@@ -1,5 +1,5 @@
 Tests = {}
-Colour = LuaLibraries:loadLibrary("colour")
+Colour = LoveLibraries:loadLibrary("colour")
 
 function Tests.start()
     print("Starting Colour tests")

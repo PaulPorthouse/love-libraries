@@ -1,6 +1,6 @@
 Tests = {}
-local Circle = LuaLibraries:loadLibrary("circle")
-local Point = LuaLibraries:loadLibrary("point")
+local Circle = LoveLibraries:loadLibrary("circle")
+local Point = LoveLibraries:loadLibrary("point")
 
 function Tests.start()
     print("Starting Circle tests")

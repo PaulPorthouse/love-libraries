@@ -1,5 +1,5 @@
 Tests = {}
-Rectangle = LuaLibraries:loadLibrary("rectangle")
+Rectangle = LoveLibraries:loadLibrary("rectangle")
 
 function Tests.start()
     print("Starting Rectangle tests")

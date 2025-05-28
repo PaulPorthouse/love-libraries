@@ -1,6 +1,6 @@
 Tests = {}
-local Path = LuaLibraries:loadLibrary("path")
-LuaLibraries:loadExtension("TableExtension")
+local Path = LoveLibraries:loadLibrary("path")
+LoveLibraries:loadExtension("TableExtension")
 
 function Tests.start()
     print("Starting Path tests")

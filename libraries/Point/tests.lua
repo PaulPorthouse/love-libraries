@@ -1,5 +1,5 @@
 Tests = {}
-Point = LuaLibraries:loadLibrary("point")
+Point = LoveLibraries:loadLibrary("point")
 
 function Tests.start()
     print("Starting Point tests")

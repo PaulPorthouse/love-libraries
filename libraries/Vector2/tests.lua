@@ -1,5 +1,5 @@
 Tests = {}
-local Vector2 = LuaLibraries:loadLibrary("vector2")
+local Vector2 = LoveLibraries:loadLibrary("vector2")
 
 function Tests.start()
     print("Starting Vector2 tests")

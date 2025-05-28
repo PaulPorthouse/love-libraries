@@ -1,4 +1,4 @@
-Point = {}
+local Point = {}
 Point.__index = Point
 Point.__version = "0.0.1"
 

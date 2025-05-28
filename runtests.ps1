@@ -1,1 +1,2 @@
-lua -l main
+cls
+love .

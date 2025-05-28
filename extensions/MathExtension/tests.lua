@@ -1,5 +1,5 @@
 Tests = {}
-require "mathextension"
+LuaLibraries:loadExtension("mathextension")
 
 function Tests.start()
     print("Starting Math tests")

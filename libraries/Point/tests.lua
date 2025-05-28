@@ -1,5 +1,5 @@
 Tests = {}
-Point = require "point"
+Point = LuaLibraries:loadLibrary("point")
 
 function Tests.start()
     print("Starting Point tests")

@@ -1,8 +1,8 @@
-Colour = {}
+local Colour = {}
 Colour.__index = "Colour"
 Colour.__version = "0.0.1"
 
-require "mathextension"
+LuaLibraries:loadExtension("MathExtension")
 
 function Colour:new(r, g, b, a)
     local c = {

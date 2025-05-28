@@ -1,5 +1,5 @@
 Tests = {}
-Rectangle = require "rectangle"
+Rectangle = LuaLibraries:loadLibrary("rectangle")
 
 function Tests.start()
     print("Starting Rectangle tests")

@@ -1,4 +1,4 @@
-Rectangle = {}
+local Rectangle = {}
 Rectangle.__index = Rectangle
 Rectangle.__version = "0.0.1"
 

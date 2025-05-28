@@ -1,5 +1,5 @@
 Tests = {}
-Colour = require "colour"
+Colour = LuaLibraries:loadLibrary("colour")
 
 function Tests.start()
     print("Starting Colour tests")

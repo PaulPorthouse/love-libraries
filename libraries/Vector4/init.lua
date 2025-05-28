@@ -1,4 +1,4 @@
-Vector4 = {}
+local Vector4 = {}
 Vector4.__index = "Vector2"
 Vector4.__version = "0.0.1"
 

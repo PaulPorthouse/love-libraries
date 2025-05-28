@@ -11,16 +11,16 @@ function love.load()
     require("lldebugger").start()
     end
 
-    print("\nRunning " .. #testExtensions .. " extension tests")
+    print("\nRunning " .. #testExtensions .. " extension suites")
     for _, testFile in ipairs(testExtensions) do
         local tests = require (testFile)
-        tests.start()
+        tests:start()
     end
 
-    print("\nRunning " .. #testLibraries .. " library tests")
+    print("\nRunning " .. #testLibraries .. " library suites")
     for _, testFile in ipairs(testLibraries) do
         local tests = require (testFile)
-        tests.start()
+        tests:start()
     end
 end
 

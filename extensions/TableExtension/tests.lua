@@ -1,10 +1,16 @@
-Tests = {}
+local Tests = {}
+
 LoveLibraries:loadExtension("tableextension")
 
-function Tests.start()
-    print("Starting Table tests")
+function Tests:start()
+    local fs = table.functions(self, "^test__")
+    print("Starting " .. #fs .. " Table test(s)")
 
-    print("All String Table passed")
+    for _, f in ipairs(fs) do
+        f()
+    end
+
+    print("All Table tests passed")
     return true
 end
 

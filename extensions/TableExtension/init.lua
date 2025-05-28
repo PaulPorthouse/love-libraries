@@ -49,3 +49,20 @@ function table.merge(this, other)
 
     return result
 end
+
+function table.functions(this, filter)
+    local result = {}
+    for k, v in pairs(this) do
+        if type(v) == "function" then
+            if filter then
+                if k:find(filter) then
+                    result[#result+1] = v
+                end
+            else
+                result[#result+1] = v
+            end
+        end
+    end
+
+    return result
+end

@@ -15,12 +15,9 @@ function Point:move(dx, dy, dz)
 end
 
 function Point:clamp(minX, minY, maxX, maxY, minZ, maxZ)
-    mixX = minX or 0
-    minY = minY or 0
-    minZ = minZ or 0
-    maxX = maxX or 0
-    maxY = maxY or 0
-    maxZ = maxZ or 0
+    minX = minX or 0; maxX = maxX or 0
+    minY = minY or 0; maxY = maxY or 0
+    minZ = minZ or 0; maxZ = maxZ or 0
     if self.x < minX then self.x = minX end
     if self.y < minY then self.y = minY end
     if self.z < minZ then self.z = minZ end

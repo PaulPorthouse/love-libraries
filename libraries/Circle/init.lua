@@ -21,4 +21,21 @@ function Circle:new(p1, p2, p3)
     return c
 end
 
+function Circle:generatePointsOnCircumference(numberOfPoints)
+    local a = 0.0
+    local da = 2.0 * math.pi / numberOfPoints
+
+    local points = {}
+
+    for i = 0, numberOfPoints - 1 do
+        x = self.position.x + self.radius * math.cos(a)
+        y = self.position.y + self.radius * math.sin(a)
+        points[#points + 1] = Point:new(x, y)
+
+        a= a + da
+    end
+
+    return points
+end
+
 return Circle

@@ -1,14 +1,26 @@
-Tests = {}
-Point = LoveLibraries:loadLibrary("point")
+local Tests = {}
 
-function Tests.start()
-    print("Starting Point tests")
+local Point = LoveLibraries:loadLibrary("point")
 
-    -- test constructor
+function Tests:start()
+    local fs = table.functions(self, "^test__")
+    print("Starting " .. #fs .. " Point test(s)")
+
+    for _, f in ipairs(fs) do
+        f()
+    end
+
+    print("All Point tests passed")
+    return true
+end
+
+function Tests.test__constructor()
     local p1 = Point:new(1, 2)
     assert(p1.x == 1, "X value is incorrect. Expected 1, set to " .. p1.x)
     assert(p1.y == 2, "X value is incorrect. Expected 2, set to " .. p1.y)
+end
 
+function Tests.test__clamp()
     -- test clamp minX
     local p2 = Point:new(-10, 100)
     p2:clamp(0, 0, 500, 500)
@@ -28,15 +40,6 @@ function Tests.start()
     local p5 = Point:new(100, 600)
     p5:clamp(0, 0, 500, 500)
     assert(p5.y == 500, "Y has not been clamped. Expected 500, set to " .. p5.y)
-
-    -- test angle
-    -- TODO
-
-    -- test distance
-    -- TODO
-
-    print("All Point tests passed")
-    return true
 end
 
 return Tests

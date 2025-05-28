@@ -40,13 +40,13 @@ function Tests.test__resize()
     assert(r3.width == 50, "Height value is incorrect. Expected 50, set to " .. r3.height)
 end
 
--- function Tests.test__toBoundingBox()
---     local r3 = Rectangle:new(10, 20, 30, 40)
---     local bb1 = r3:toBoundingBox()
---     assert(bb1[1] == 10, "X1 value is incorrect. Expected 10, set to " .. bb1[1])
---     assert(bb1[2] == 20, "Y1 value is incorrect. Expected 20, set to " .. bb1[2])
---     assert(bb1[3] == 40, "X2 value is incorrect. Expected 40, set to " .. bb1[3])
---     assert(bb1[4] == 60, "Y2 value is incorrect. Expected 60, set to " .. bb1[4])
--- end
+function Tests.test__toBoundingBox()
+    local r3 = Rectangle:new(10, 20, 30, 40)
+    local bb1 = r3:toBoundingBox()
+    assert(bb1.x1 == 10, "X1 value is incorrect. Expected 10, set to " .. bb1.x1)
+    assert(bb1.y1 == 20, "Y1 value is incorrect. Expected 20, set to " .. bb1.y1)
+    assert(bb1.x2 == 40, "X2 value is incorrect. Expected 40, set to " .. bb1.x2)
+    assert(bb1.y2 == 60, "Y2 value is incorrect. Expected 60, set to " .. bb1.y2)
+end
 
 return Tests

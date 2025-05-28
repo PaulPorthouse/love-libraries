@@ -1,5 +1,5 @@
 
-function table.getKeys(t)
+function table.keys(t)
     local keys = {}
     for k, v in pairs(t) do
         keys[#keys + 1] = k
@@ -9,8 +9,8 @@ function table.getKeys(t)
 end
 
 function table.compare(this, other)
-    local thiskeys = table.getKeys(this)
-    local otherKeys = table.getKeys(other)
+    local thiskeys = table.keys(this)
+    local otherKeys = table.keys(other)
 
     for k in ipairs(thiskeys) do
         if otherKeys[k] == nil then
@@ -36,4 +36,16 @@ function table.icompare(this, other)
     end
 
     return true
+end
+
+function table.merge(this, other)
+    local result = {}
+    for _, v in ipairs(this) do
+        result[#result+1] = v
+    end
+    for _, v in ipairs(other) do
+        result[#result+1] = v
+    end
+
+    return result
 end

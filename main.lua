@@ -1,9 +1,19 @@
 function love.load()
     print("\n")
+
+    if os.getenv("LOCAL_LUA_DEBUGGER_VSCODE") == "1" then
+    require("lldebugger").start()
+    end
+
     LuaLibraries = require "."
 
+    -- extension tests
     local MathTests = require "extensions/MathExtension/tests"
     MathTests.start()
+
+    -- library tests
+    local CircleTests = require "libraries/Circle/tests"
+    CircleTests.start()
 
     local PointTests = require "libraries/Point/tests"
     PointTests.start()
@@ -13,6 +23,18 @@ function love.load()
 
     local ColourTests = require "libraries/Colour/tests"
     ColourTests.start()
+
+    local PathTests = require "libraries/Path/tests"
+    PathTests.start()
+
+    local Vector2Tests = require "libraries/Vector2/tests"
+    Vector2Tests.start()
+
+    local Vector3Tests = require "libraries/Vector3/tests"
+    Vector3Tests.start()
+
+    local Vector4Tests = require "libraries/Vector4/tests"
+    Vector4Tests.start()
 end
 
 function love.update(dt)

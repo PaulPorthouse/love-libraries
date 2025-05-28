@@ -1,22 +1,20 @@
 local Path = {}
-Path.__index = "Path"
+Path.__index = Path
 Path.__version = "0.0.1"
-
-local currentPath = (...)
 
 LuaLibraries:loadExtension("StringExtension")
 
 Path.PathSeparator = "/"
 
 function Path:new(parts)
-    local p = {}
+    local p = { parts = {} }
     if type(parts) == "table" then
-        p = { parts = parts or {} }
+        p = { parts = parts }
     elseif type(parts) == "string" then
         p = { parts = parts:split(Path.PathSeparator) }
     end
 
-    setmetatable(p, Path)
+    setmetatable(p, self)
     return p
 end
 
@@ -27,3 +25,5 @@ end
 function Path:GetPath(separator)
     return table.concat(self.parts, separator or Path.PathSeparator)
 end
+
+return Path

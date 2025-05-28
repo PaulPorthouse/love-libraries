@@ -1,5 +1,5 @@
 local Colour = {}
-Colour.__index = "Colour"
+Colour.__index = Colour
 Colour.__version = "0.0.1"
 
 LuaLibraries:loadExtension("MathExtension")
@@ -11,7 +11,7 @@ function Colour:new(r, g, b, a)
         b = b or 1,
         a = a or 1
     }
-    setmetatable(c, Colour)
+    setmetatable(c, self)
     return c
 end
 

@@ -4,7 +4,7 @@ Rectangle.__version = "0.0.1"
 
 function Rectangle:new(x, y, width, height)
     local r = { x = x or 0, y = y or 0, width = width or 0, height = height or 0 }
-    setmetatable(r, Rectangle)
+    setmetatable(r, self)
     return r
 end
 

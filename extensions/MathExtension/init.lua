@@ -33,3 +33,19 @@ function math.angle(point1, point2)
 
     return angle -- Convert to degrees if needed
 end
+
+-- rotate a point around an origin point
+function math.rotatePointAroundOrigin(originX, originY, pointX, pointY, angle)
+    local theta = math.rad(angle)
+
+    local rx = originX + (pointX - originX) * math.cos(theta) - (pointY - originY) * math.sin(theta)
+    local ry = originY + (pointX - originX) * math.sin(theta) + (pointY - originY) * math.cos(theta)
+
+    return rx, ry
+end
+
+function math.almostEqual(a, b, epsilon)
+    epsilon = epsilon or 1e-6  -- Default epsilon if not provided
+    print(type(a), type(b), type(epsilon))
+    return math.abs(a - b) < epsilon
+end

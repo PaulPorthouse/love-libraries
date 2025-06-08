@@ -46,6 +46,5 @@ end
 
 function math.almostEqual(a, b, epsilon)
     epsilon = epsilon or 1e-6  -- Default epsilon if not provided
-    print(type(a), type(b), type(epsilon))
     return math.abs(a - b) < epsilon
 end

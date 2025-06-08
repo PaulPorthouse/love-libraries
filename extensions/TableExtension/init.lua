@@ -8,6 +8,16 @@ function table.keys(t)
     return keys
 end
 
+function table.containsValue(t, value)
+    for _, v in ipairs(t) do
+        if v == value then
+            return true
+        end
+    end
+
+    return false
+end
+
 function table.compare(this, other)
     local thiskeys = table.keys(this)
     local otherKeys = table.keys(other)
@@ -65,4 +75,14 @@ function table.functions(this, filter)
     end
 
     return result
+end
+
+-- Return the first index with the given value (or nil if not found).
+function table.indexOf(array, value)
+    for i, v in ipairs(array) do
+        if v == value then
+            return i
+        end
+    end
+    return nil
 end

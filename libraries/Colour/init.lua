@@ -24,4 +24,19 @@ function Colour:lerp(startColour, endColour, currentStep)
     )
 end
 
+function Colour.fromRGBA(r, g, b, a)
+    local r1, g1, b1, a1 = love.math.colorFromBytes(r, g, b, a)
+    return Colour:new(r1, g1, b1, a1)
+end
+
+function Colour.fromHex(hex)
+    local r = tonumber(hex:sub(1, 2), 16)
+    local g = tonumber(hex:sub(3, 4), 16)
+    local b = tonumber(hex:sub(5, 6), 16)
+    local a = tonumber("FF", 16)
+    if #hex == 8 then a = tonumber(hex:sub(7, 8), 16) end
+
+    return Colour.fromRGBA(r, g, b, a)
+end
+
 return Colour
